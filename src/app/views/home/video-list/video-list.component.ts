@@ -1,6 +1,8 @@
+import { Component, OnInit } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
+
 import { Video } from './../../../shared/model/video.model';
 import { VideoService } from './../../../shared/service/video.service';
-import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-video-list',
@@ -10,9 +12,9 @@ import { Component, OnInit } from '@angular/core';
 export class VideoListComponent implements OnInit {
 
   videosPrevious: Video[];
-  livesNext: Video[];
+  videosNext: Video[];
 
-  constructor(public videoService: VideoService) { }
+  constructor(public videoService: VideoService, public sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.getVideos();
@@ -21,10 +23,16 @@ export class VideoListComponent implements OnInit {
   getVideos() {
     this.videoService.getVideosWithFlag('previous').subscribe(data => {
       this.videosPrevious = data.content;
+      this.videosPrevious.forEach(video => {
+        video.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(video.videoLink);
+      });
     });
 
     this.videoService.getVideosWithFlag('next').subscribe(data => {
-      this.videosPrevious = data.content;
+      this.videosNext = data.content;
+      this.videosNext.forEach(video => {
+        video.urlSafe = this.sanitizer.bypassSecurityTrustResourceUrl(video.videoLink);
+      });
     });
   }
 

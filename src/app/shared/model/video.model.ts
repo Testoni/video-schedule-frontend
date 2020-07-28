@@ -1,3 +1,5 @@
+import { SafeResourceUrl } from '@angular/platform-browser';
+
 export class Video {
     id: string;
     videoName: string;
@@ -6,4 +8,5 @@ export class Video {
     videoTime: string;
     videoLink: string;
     registrationDate: string;
+    urlSafe: SafeResourceUrl;
 }
