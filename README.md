@@ -33,7 +33,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - ng generate pipe shared/pipe/local-date-time
 
 - ng serve
-- ng serve --port 333 -o (subindo na porta 333)
+- ng serve --port 333 -o
 
 Insert material design:
 ng add @angular/material
