@@ -26,10 +26,10 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-- ng new teste
-- ng g c componente-teste
-- ng g m modulo-teste
-- ng g s service-teste
+- ng new test
+- ng g c test
+- ng g m modulo-test
+- ng g s test
 - ng generate pipe shared/pipe/local-date-time
 
 - ng serve
