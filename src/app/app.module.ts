@@ -10,13 +10,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './views/home/home.component';
-import { LiveListComponent } from './views/home/live-list/live-list.component';
+import { VideoListComponent } from './views/home/video-list/video-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LiveListComponent
+    VideoListComponent
   ],
   imports: [
     HttpClientModule,

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class LiveService {
+export class VideoService {
 
   apiUrl = 'http://localhost:8080/videos';
 
