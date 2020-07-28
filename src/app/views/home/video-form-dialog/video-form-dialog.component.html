@@ -1,4 +1,21 @@
-<h1 mat-dialog-title>Hi </h1>
+<h1 mat-dialog-title>Video</h1>
+<div class="example-form" [formGroup]="videoForm">
+    <form action="">
+        <mat-form-field class="example-full-width">
+            <mat-label>Video Name</mat-label>
+            <input matInput formControlName="videoName" name="videoName">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Channel Name</mat-label>
+            <input matInput formControlName="channelName" name="channelName">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>URL</mat-label>
+            <input matInput formControlName="videoLink" name="videoLink">
+        </mat-form-field>
+    </form>
+</div>
 <div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="createVideo()">Add</button>
   <button mat-button (click)="cancel()">Cancel</button>
 </div>
