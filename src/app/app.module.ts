@@ -8,6 +8,8 @@ import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatNativeDateModule } from '@angular/material/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -34,7 +36,10 @@ import { VideoFormDialogComponent } from './views/home/video-form-dialog/video-f
     MatTabsModule,
     MatCardModule,
     MatChipsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatNativeDateModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     LocalDateTimePipe

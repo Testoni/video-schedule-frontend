@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-video-form-dialog',
@@ -8,9 +9,20 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class VideoFormDialogComponent implements OnInit {
 
-  constructor(public dialogRef: MatDialogRef<VideoFormDialogComponent>) { }
+  public videoForm: FormGroup;
+
+  constructor(
+    private fb: FormBuilder,
+    public dialogRef: MatDialogRef<VideoFormDialogComponent>) { }
 
   ngOnInit(): void {
+    this.videoForm = this.fb.group({
+      videoName: ['', [Validators.required]],
+      channelName: ['', [Validators.required]],
+      videoLink: ['', [Validators.required]],
+      videoDate: ['', [Validators.required]],
+      videoTime: ['', [Validators.required]]
+    });
   }
 
   cancel(): void {
