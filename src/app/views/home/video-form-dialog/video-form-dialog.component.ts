@@ -1,7 +1,10 @@
-import { VideoService } from './../../../shared/service/video.service';
+
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import * as moment from 'moment';
+
+import { VideoService } from './../../../shared/service/video.service';
 
 @Component({
   selector: 'app-video-form-dialog',
@@ -28,6 +31,9 @@ export class VideoFormDialogComponent implements OnInit {
   }
 
   createVideo() {
+    let newDate: moment.Moment = moment.utc(this.videoForm.value.videoDate).local();
+    this.videoForm.value.videoDate = newDate.format("YYYY-MM-DD") + "T" + this.videoForm.value.videoTime;
+
     this.rest.postVideos(this.videoForm.value).subscribe(result => {});
     this.dialogRef.close();
     this.videoForm.reset();

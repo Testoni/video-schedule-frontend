@@ -13,6 +13,24 @@
             <mat-label>URL</mat-label>
             <input matInput formControlName="videoLink" name="videoLink">
         </mat-form-field>
+
+        <div fxLayout="row wrap">
+            <div fxFlex="40" fxFill fxLayoutAlign="start center">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Video Date</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="videoDate" name="videoDate">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div fxFlex></div>
+            <div fxFlex="40" fxFill fxLayoutAlign="start center">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Hour</mat-label>
+                    <input matInput type="time" formControlName="videoTime" name="videoTime" #time>
+                </mat-form-field>
+            </div>
+        </div>
     </form>
 </div>
 <div mat-dialog-actions>
